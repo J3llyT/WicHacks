@@ -1244,11 +1244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3674282453267876374, guid: 4da637d4235fd8b43afc8cf007e1ea33, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3674282453267876374, guid: 4da637d4235fd8b43afc8cf007e1ea33, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3674282453267876374, guid: 4da637d4235fd8b43afc8cf007e1ea33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1644,11 +1644,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb4d8c75afdef54a85f8e39871a37d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animations:
-  - {fileID: 7400000, guid: f669d0d4504df5946922cacb0f6aeba9, type: 2}
-  - {fileID: 7400000, guid: cbe52b60c5667674d88bf11ece06149e, type: 2}
-  - {fileID: 7400000, guid: 7d7e98cb71a16984aa0ef9910408f748, type: 2}
-  - {fileID: 7400000, guid: 18f8ce68422323040944ab8063d704f2, type: 2}
+  speedX: 0
+  speedY: 0
+  hasWon: 0
 --- !u!61 &685588859
 BoxCollider2D:
   m_ObjectHideFlags: 0

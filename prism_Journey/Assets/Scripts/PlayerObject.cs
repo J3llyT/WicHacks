@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerObject : MonoBehaviour
 {
     private Rigidbody2D playerRB2D;
+    private Animator playerAnimator;
 
     private float speed;
     private float jumpForce;
@@ -12,10 +13,15 @@ public class PlayerObject : MonoBehaviour
     private float moveX;
     private float moveY;
 
+    public float speedX;
+    public float speedY;
+    public bool hasWon = false;
+
     // Start is called before the first frame update
     void Start()
     {
         playerRB2D = gameObject.GetComponent<Rigidbody2D>();
+        playerAnimator= gameObject.GetComponent<Animator>();
 
         speed = 2f;
         jumpForce = 50f;
@@ -37,12 +43,17 @@ public class PlayerObject : MonoBehaviour
         if(moveX > 0 || moveX < 0)
         {
             playerRB2D.AddForce(new Vector2(moveX * speed, 0f), ForceMode2D.Impulse);
+            playerAnimator.SetTrigger("run");
         }
 
         if (!isJumping && moveY > 0)
         {
             playerRB2D.AddForce(new Vector2(0f, moveY * jumpForce), ForceMode2D.Impulse);
+            playerAnimator.SetTrigger("jump");
         }
+
+        playerAnimator.SetTrigger("idle");
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
