@@ -6,10 +6,6 @@ public class PlayerScript : MonoBehaviour
 {
     public bool isCurrentlyColliding = false;
 
-    public int lives = 5;
-
-    public float invinsibilityTimer;
-
     public float aliveTimer = 0;
     public int score = 0;
 
@@ -33,7 +29,6 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         playerPosition = transform.position;
-        invinsibilityTimer = 0;
     }
 
     // Update is called once per frame
@@ -49,31 +44,17 @@ public class PlayerScript : MonoBehaviour
 
         Movement();
 
-        if (invinsibilityTimer == 0)
+        //if the object is colliding...
+        if (isCurrentlyColliding)
         {
-            //if the object is colliding...
-            if (isCurrentlyColliding)
-            {
-                //change to red
-                GetComponent<SpriteRenderer>().color = Color.red;
-                invinsibilityTimer += Time.deltaTime;
-                --lives;
-            }
-            //if the object isn't colliding...
-            else
-            {
-                //leave it as its original color
-                GetComponent<SpriteRenderer>().color = Color.white;
-            }
+            //change to red
+            GetComponent<SpriteRenderer>().color = Color.red;
         }
+        //if the object isn't colliding...
         else
         {
-            invinsibilityTimer += Time.deltaTime;
-
-            if (invinsibilityTimer > 3f)
-            {
-                invinsibilityTimer = 0;
-            }
+            //leave it as its original color
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
 
     }
