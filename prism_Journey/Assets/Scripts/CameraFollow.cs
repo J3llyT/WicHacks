@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public GameObject player;
+
+    private Vector3 offset;
 
     public Transform followTransform;
     public Bounds mapBounds;
@@ -23,6 +26,8 @@ public class CameraFollow : MonoBehaviour
         mainCam = GetComponent<Camera>();
         camOrthsize = mainCam.orthographicSize;
         cameraRatio = (xMax + camOrthsize) / 2.0f;
+
+        offset = transform.position - player.transform.position;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -30,5 +35,10 @@ public class CameraFollow : MonoBehaviour
        // camY = Mathf.Clamp(followTransform.position.y, yMin + camOrthsize, yMax - camOrthsize);
         camX = Mathf.Clamp(followTransform.position.x, xMin + cameraRatio, xMax - cameraRatio);
         this.transform.position = new Vector3(camX, 0.0f, this.transform.position.z);
+    }
+
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + offset;
     }
 }
