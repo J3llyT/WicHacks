@@ -527,7 +527,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 685588851}
         m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
