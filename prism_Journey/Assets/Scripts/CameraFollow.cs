@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
 
     public Transform followTransform;
-    public BoxCollider2D mapBounds;
+    public Bounds mapBounds;
 
     private float xMin, xMax, yMin, yMax;
     private float camY, camX;
@@ -16,10 +16,10 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        xMin = mapBounds.bounds.min.x;
-        xMax = mapBounds.bounds.max.x;
-        yMin = mapBounds.bounds.min.y;
-        yMax = mapBounds.bounds.max.y;
+        xMin = mapBounds.min.x;
+        xMax = mapBounds.max.x;
+        yMin = mapBounds.min.y;
+        yMax = mapBounds.max.y;
         mainCam = GetComponent<Camera>();
         camOrthsize = mainCam.orthographicSize;
         cameraRatio = (xMax + camOrthsize) / 2.0f;
