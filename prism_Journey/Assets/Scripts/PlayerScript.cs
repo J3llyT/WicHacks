@@ -13,7 +13,6 @@ public class PlayerScript : MonoBehaviour
     public float aliveTimer = 0;
     public int score = 0;
 
-    //---------------------------------------MOVEMENT-----------------------------
     [SerializeField]
     float speed = 1f;
 
@@ -87,12 +86,7 @@ public class PlayerScript : MonoBehaviour
         float totalCamWidth = totalCamHeight * cameraObject.aspect;
 
         direction = movementInput;
-        //direction = Quaternion.Euler(0, 0, turnAmount * Time.deltaTime) * direction;
-
-        // velocity is direction * speed * deltaTime
         velocity = direction * speed * Time.deltaTime;
-
-        // add velocity to the position
         playerPosition += velocity;
 
 
@@ -113,10 +107,7 @@ public class PlayerScript : MonoBehaviour
             playerPosition = new Vector3(playerPosition.x, -(totalCamHeight), playerPosition.z);
         }
 
-        // "draw" this player at this position
         transform.position = playerPosition;
-
-
 
     }
 
