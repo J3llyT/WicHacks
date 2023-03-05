@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2253899162832117757, guid: c800f1bb490739e48a311021cf4c99fc, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c800f1bb490739e48a311021cf4c99fc, type: 3}
 --- !u!4 &35494056 stripped
@@ -416,8 +420,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127089517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.16, y: 1.2205447, z: -0.11714763}
-  m_LocalScale: {x: 0.20492192, y: 0.19997308, z: 0.19997308}
+  m_LocalPosition: {x: 138.7, y: 5.1, z: -0.11714763}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.19997308}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2015402505}
@@ -608,7 +612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9578e7175a8d44db765c625804bf84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTransform: {fileID: 685588854}
+  player: {fileID: 685588848}
+  followTransform: {fileID: 2015402505}
   mapBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
@@ -687,11 +692,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2971993384438107058, guid: 4da637d4235fd8b43afc8cf007e1ea33, type: 3}
   m_PrefabInstance: {fileID: 623498298}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &685588854 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3674282453267876374, guid: 4da637d4235fd8b43afc8cf007e1ea33, type: 3}
-  m_PrefabInstance: {fileID: 623498298}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &685588857
 Rigidbody2D:
   serializedVersion: 4
@@ -725,6 +725,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb4d8c75afdef54a85f8e39871a37d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animations:
+  - {fileID: 7400000, guid: f669d0d4504df5946922cacb0f6aeba9, type: 2}
+  - {fileID: 7400000, guid: cbe52b60c5667674d88bf11ece06149e, type: 2}
+  - {fileID: 7400000, guid: 7d7e98cb71a16984aa0ef9910408f748, type: 2}
+  - {fileID: 7400000, guid: 18f8ce68422323040944ab8063d704f2, type: 2}
 --- !u!61 &685588859
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -917,7 +922,7 @@ GameObject:
   - component: {fileID: 949549702}
   m_Layer: 0
   m_Name: Platforms_1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1040,8 +1045,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030507536}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -29.4, y: 1.2205447, z: -0.11714763}
-  m_LocalScale: {x: 0.20492192, y: 0.19997308, z: 0.19997308}
+  m_LocalPosition: {x: 90.8, y: 5.1, z: -0.11714763}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.19997308}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2015402505}
@@ -1153,6 +1158,10 @@ PrefabInstance:
     - target: {fileID: 2253899162832117757, guid: c800f1bb490739e48a311021cf4c99fc, type: 3}
       propertyPath: m_Name
       value: Ground 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2253899162832117757, guid: c800f1bb490739e48a311021cf4c99fc, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c800f1bb490739e48a311021cf4c99fc, type: 3}
@@ -1387,8 +1396,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424314823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.870774, y: 1.2205447, z: -0.11714763}
-  m_LocalScale: {x: 0.20492192, y: 0.19997308, z: 0.19997308}
+  m_LocalPosition: {x: 43.2, y: 5.1, z: -0.11714763}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.19997308}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2015402505}
@@ -1459,7 +1468,7 @@ GameObject:
   - component: {fileID: 1915722775}
   m_Layer: 0
   m_Name: Platforms_2
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1654,7 +1663,7 @@ GameObject:
   - component: {fileID: 1991218519}
   m_Layer: 0
   m_Name: Platforms_2
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1944,8 +1953,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042319245}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 19.57, y: 1.2205447, z: -0.11714763}
-  m_LocalScale: {x: 0.20492192, y: 0.19997308, z: 0.19997308}
+  m_LocalPosition: {x: -4.3, y: 5.1, z: -0.11714763}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.19997308}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2015402505}

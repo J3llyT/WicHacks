@@ -12,6 +12,8 @@ public class PlayerObject : MonoBehaviour
     private float moveX;
     private float moveY;
 
+    public List<AnimationClip> animations;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class PlayerObject : MonoBehaviour
         // movement
         if(moveX > 0 || moveX < 0)
         {
+            //animations[3].play();
             playerRB2D.AddForce(new Vector2(moveX * speed, 0f), ForceMode2D.Impulse);
         }
 
