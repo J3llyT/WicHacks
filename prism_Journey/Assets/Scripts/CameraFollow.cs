@@ -16,6 +16,8 @@ public class CameraFollow : MonoBehaviour
     private float camOrthsize;
     private float cameraRatio;
     private Camera mainCam;
+    private Vector3 smoothPos;
+    public float smoothSpeed = 0.5f;
 
     private void Start()
     {
@@ -32,13 +34,15 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       // camY = Mathf.Clamp(followTransform.position.y, yMin + camOrthsize, yMax - camOrthsize);
+        camY = Mathf.Clamp(0.0f, yMin , yMax);
         camX = Mathf.Clamp(followTransform.position.x, xMin + cameraRatio, xMax - cameraRatio);
-        this.transform.position = new Vector3(camX, 0.0f, this.transform.position.z);
+        //this.transform.position = new Vector3(camX, 0.0f, 0.0f);
+        smoothPos = Vector3.Lerp(this.transform.position, new Vector3(camX, 0.0f, this.transform.position.z), smoothSpeed);
+        this.transform.position = smoothPos;
     }
 
-    void LateUpdate()
-    {
-        transform.position = player.transform.position + offset;
-    }
+    //void LateUpdate()
+    //{
+    //    //transform.position = player.transform.position + offset;
+    //}
 }
