@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
     public bool isCurrentlyColliding = false;
-
-    public float aliveTimer = 0;
-    public int score = 0;
 
     [SerializeField]
     float speed = 1f;
@@ -21,9 +19,6 @@ public class PlayerScript : MonoBehaviour
 
     private Vector3 movementInput;
 
-    private float totalCamHeight;
-    private float totalCamWidth;
-
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +26,8 @@ public class PlayerScript : MonoBehaviour
         playerPosition = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        aliveTimer += Time.deltaTime;
-
-        if (aliveTimer >= 1f)
-        {
-            ++score;
-            aliveTimer = 0;
-        }
 
         Movement();
 
@@ -112,9 +99,9 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-    // public void OnMove(InputAction.CallbackContext content)
-    // {
-    //    movementInput = content.ReadValue<Vector2>();
-    //}
+    public void OnMove(InputAction.CallbackContext content)
+    {
+        movementInput = content.ReadValue<Vector2>();
+    }
 
 }
