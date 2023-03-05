@@ -27,8 +27,8 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        camY = Mathf.Clamp(followTransform.position.y, yMin + camOrthsize, yMax - camOrthsize);
+       // camY = Mathf.Clamp(followTransform.position.y, yMin + camOrthsize, yMax - camOrthsize);
         camX = Mathf.Clamp(followTransform.position.x, xMin + cameraRatio, xMax - cameraRatio);
-        this.transform.position = new Vector3(camX, camY, this.transform.position.z);
+        this.transform.position = new Vector3(camX, 0.0f, this.transform.position.z);
     }
 }
