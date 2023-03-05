@@ -222,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9123076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2566833, y: -3.9322212, z: 0}
+  m_LocalPosition: {x: -2.31, y: -3.9322212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1222,10 +1222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 685588848}
-  followTransform: {fileID: 2015402505}
+  followTransform: {fileID: 685588863}
   mapBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  smoothSpeed: 0.5
 --- !u!1001 &623498298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1686,6 +1687,11 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00073438336, y: -0.006730934}
   m_Size: {x: 0.27740282, y: 0.2841016}
   m_Direction: 0
+--- !u!4 &685588863 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3674282453267876374, guid: 4da637d4235fd8b43afc8cf007e1ea33, type: 3}
+  m_PrefabInstance: {fileID: 623498298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &746375282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2253899162832117757, guid: c800f1bb490739e48a311021cf4c99fc, type: 3}
