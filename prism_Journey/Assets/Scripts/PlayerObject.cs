@@ -35,6 +35,11 @@ public class PlayerObject : MonoBehaviour
         // detect movement
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
+
+        if(hasWon)
+        {
+            playerAnimator.SetTrigger("win");
+        }
     }
 
     private void FixedUpdate()
@@ -72,5 +77,20 @@ public class PlayerObject : MonoBehaviour
         {
             isJumping = true;
         }
+    }
+
+    public bool AABBCollision(GameObject otherObject)
+    {
+        Bounds thisObjectBounds = this.GetComponent<SpriteRenderer>().bounds;
+        Bounds otherObjectBounds = otherObject.GetComponent<SpriteRenderer>().bounds;
+
+        if ((thisObjectBounds.min.x < otherObjectBounds.max.x) && (thisObjectBounds.max.x > otherObjectBounds.min.x)
+            && (thisObjectBounds.min.y < otherObjectBounds.max.y) && (thisObjectBounds.max.y > otherObjectBounds.min.y))
+        {
+            return true;
+        }
+
+        return false;
+
     }
 }
